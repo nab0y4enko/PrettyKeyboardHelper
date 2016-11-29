@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAn-MS-Ofp">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6GM-bB-zOb">
+                                        <rect key="frame" x="8" y="5" width="359" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.27058823529999998" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="6GM-bB-zOb" firstAttribute="top" secondItem="sAn-MS-Ofp" secondAttribute="top" constant="5" id="6rR-OR-Jd5"/>
+                                    <constraint firstAttribute="height" constant="40" id="EfV-sR-9td"/>
+                                    <constraint firstAttribute="bottom" secondItem="6GM-bB-zOb" secondAttribute="bottom" constant="5" id="ZkV-CX-KFN"/>
+                                    <constraint firstAttribute="trailing" secondItem="6GM-bB-zOb" secondAttribute="trailing" constant="8" id="aXl-dW-NA2"/>
+                                    <constraint firstItem="6GM-bB-zOb" firstAttribute="leading" secondItem="sAn-MS-Ofp" secondAttribute="leading" constant="8" id="fgL-tF-tDv"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PrettyKeyboardHelper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pV3-Ac-fLX">
+                                <rect key="frame" x="80" y="320" width="215" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <color key="textColor" red="0.96078431369999995" green="0.27058823529999998" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pV3-Ac-fLX" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2Nz-gu-GbC"/>
+                            <constraint firstAttribute="trailing" secondItem="sAn-MS-Ofp" secondAttribute="trailing" id="7qo-rc-Ehj"/>
+                            <constraint firstItem="sAn-MS-Ofp" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="KJl-r3-fia"/>
+                            <constraint firstItem="sAn-MS-Ofp" firstAttribute="top" secondItem="pV3-Ac-fLX" secondAttribute="bottom" constant="283" id="Ng9-g4-d2m"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="sAn-MS-Ofp" secondAttribute="bottom" id="VkP-Ff-dZl"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLayoutConstraint" destination="VkP-Ff-dZl" id="hb9-Eu-8Ky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="24.800000000000001" y="35.532233883058474"/>
+        </scene>
+    </scenes>
+</document>
