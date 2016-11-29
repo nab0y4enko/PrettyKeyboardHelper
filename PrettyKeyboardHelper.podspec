@@ -18,9 +18,9 @@ Pod::Spec.new do |s|
 
   s.source          = { :git => "https://github.com/nab0y4enko/PrettyKeyboardHelper.git", :tag => "#{s.version}" }
 
-  s.source_files    = "CPrettyKeyboardHelper/**/*.swift"
+  s.source_files    = "PrettyKeyboardHelper/**/*.swift"
 
-  s.frameworks      = "UIKit", "Foundation"
+  s.frameworks      = "UIKit"
 
   s.requires_arc    = true
 end
