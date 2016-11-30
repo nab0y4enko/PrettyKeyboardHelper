@@ -1,8 +1,22 @@
 # PrettyKeyboardHelper
+[![Cocoapod](https://img.shields.io/cocoapods/v/PrettyKeyboardHelper.svg)](https://cocoapods.org/pods/PrettyKeyboardHelper)
 
 A safe helper for keyboard notifications written in Swift.
 
+
 <img src="https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/develop/demo.gif" alt="Demo" width="320" height="567"/>
+
+## Installation
+
+### CocoaPods
+
+KeyboardWrapper is available through [CocoaPods](http://cocoapods.org). To install
+it, simply add the following line to your Podfile:
+
+```ruby
+pod 'PrettyKeyboardHelper'
+```
+
 
 ## Usage
 
@@ -53,6 +67,7 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 
 - **iOS 8.0** or higher
 - **Xcode 8.0 (swift 3.0)** or higher
+
 
 ## License
 
