@@ -65,7 +65,7 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 
 ## Requirements
 
-- **iOS 8.0** or higher
+- **iOS 9.0** or higher
 - **Xcode 8.0 (swift 3.0)** or higher
 
 
