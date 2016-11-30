@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PrettyKeyboardHelper"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "A helper for keyboard notifications."
 
   s.description  = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
 
   s.source_files    = "PrettyKeyboardHelper/*.swift"
 
-  s.frameworks      = "Foundation, UIKit"
+  s.frameworks      = "Foundation", "UIKit"
 
   s.requires_arc    = true
 end
