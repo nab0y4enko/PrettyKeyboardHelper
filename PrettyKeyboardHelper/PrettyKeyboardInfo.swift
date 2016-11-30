@@ -8,14 +8,34 @@
 
 import Foundation
 
-public final class PrettyKeyboardInfo {
+public struct PrettyKeyboardInfo {
     
     // MARK: - Public Properties
     public var keyboardState: PrettyKeyboardState
     public var duration: TimeInterval
     public var animationCurve: UIViewAnimationCurve
+    
+    /// Start frame of the keyboard in screen coordinates.
     public var beginFrame: CGRect
+    
+    /// End frame of the keyboard in screen coordinates.
     public var endFrame: CGRect
+    
+    /// Whether the keyboard is in the current application
+    public var isLocal: Bool
+    
+    // MARK: - Initializers
+    init(userInfo: [AnyHashable : Any]?, keyboardState: PrettyKeyboardState) {
+        self.keyboardState = keyboardState
+        self.beginFrame = (userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect()
+        self.endFrame = (userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect()
+        self.duration = TimeInterval(userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double ?? 0.0)
+        self.animationCurve = UIViewAnimationCurve(rawValue: userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Int ?? 0) ?? .easeInOut
+        self.isLocal = userInfo?[UIKeyboardIsLocalUserInfoKey] as? Bool ?? false
+    }
+}
+
+extension PrettyKeyboardInfo {
     
     // MARK: - Computed Properties
     public var estimatedKeyboardHeight: CGFloat {
@@ -33,14 +53,5 @@ public final class PrettyKeyboardInfo {
         case .linear:
             return UIViewAnimationOptions.curveLinear
         }
-    }
-    
-    // MARK: - Initializers
-    init(userInfo: [AnyHashable : Any]?, keyboardState: PrettyKeyboardState) {
-        self.keyboardState = keyboardState
-        self.beginFrame = (userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect.zero
-        self.endFrame = (userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect.zero
-        self.duration = TimeInterval(userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double ?? 0.0)
-        self.animationCurve = UIViewAnimationCurve(rawValue: userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Int ?? 0) ?? .easeInOut
     }
 }

@@ -1,10 +1,10 @@
 Pod::Spec.new do |s|
   s.name         = "PrettyKeyboardHelper"
-  s.version      = "0.1"
+  s.version      = "0.1.1"
   s.summary      = "A helper for keyboard notifications."
 
   s.description  = <<-DESC
-  				   A safe helper for keyboard notifications written in Swift.
+  				          A safe helper for keyboard notifications written in Swift.
                    DESC
 
   s.homepage     = "https://github.com/nab0y4enko/PrettyKeyboardHelper"
@@ -14,13 +14,13 @@ Pod::Spec.new do |s|
   s.author              = { "Oleksii Naboichenko" => "nab0y4enko@gmail.com" }
   s.social_media_url    = "https://twitter.com/nab0y4enko"
 
-  s.platform        = :ios, "8.0"
+  s.platform        = :ios, "9.0"
 
   s.source          = { :git => "https://github.com/nab0y4enko/PrettyKeyboardHelper.git", :tag => "#{s.version}" }
 
-  s.source_files    = "PrettyKeyboardHelper/**/*.swift"
+  s.source_files    = "PrettyKeyboardHelper/*.swift"
 
-  s.frameworks      = "UIKit"
+  s.frameworks      = "Foundation, UIKit"
 
   s.requires_arc    = true
 end
