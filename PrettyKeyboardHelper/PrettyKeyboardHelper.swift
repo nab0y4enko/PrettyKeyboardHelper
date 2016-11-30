@@ -14,20 +14,16 @@ public final class PrettyKeyboardHelper {
     public weak var delegate: PrettyKeyboardHelperDelegate?
     
     // MARK: - Initializers
-    public init() {
-        registerObservers()
-    }
-    
-    public convenience init(delegate: PrettyKeyboardHelperDelegate? = nil) {
-        self.init()
+    public init(delegate: PrettyKeyboardHelperDelegate? = nil) {
         
         self.delegate = delegate
+        registerObservers()
     }
     
     // MARK: - Deinitializer
     deinit {
-        delegate = nil
         unregisterObservers()
+        delegate = nil
     }
     
     // MARK: - Computed Properties
