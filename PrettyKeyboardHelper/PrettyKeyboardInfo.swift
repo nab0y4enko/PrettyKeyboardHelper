@@ -12,26 +12,46 @@ public struct PrettyKeyboardInfo {
     
     // MARK: - Public Properties
     public var keyboardState: PrettyKeyboardState
-    public var duration: TimeInterval
-    public var animationCurve: UIViewAnimationCurve
+    public var duration: TimeInterval = 0
+    public var animationCurve: UIViewAnimationCurve = .easeInOut
     
     /// Start frame of the keyboard in screen coordinates.
-    public var beginFrame: CGRect
+    public var beginFrame: CGRect = CGRect()
     
     /// End frame of the keyboard in screen coordinates.
-    public var endFrame: CGRect
+    public var endFrame: CGRect = CGRect()
     
     /// Whether the keyboard is in the current application
-    public var isLocal: Bool
+    public var isLocal: Bool = true
     
-    // MARK: - Initializers
-    init(userInfo: [AnyHashable : Any]?, keyboardState: PrettyKeyboardState) {
-        self.keyboardState = keyboardState
-        self.beginFrame = (userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect()
-        self.endFrame = (userInfo?[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue ?? CGRect()
-        self.duration = TimeInterval(userInfo?[UIKeyboardAnimationDurationUserInfoKey] as? Double ?? 0.0)
-        self.animationCurve = UIViewAnimationCurve(rawValue: userInfo?[UIKeyboardAnimationCurveUserInfoKey] as? Int ?? 0) ?? .easeInOut
-        self.isLocal = userInfo?[UIKeyboardIsLocalUserInfoKey] as? Bool ?? false
+    init(keyboardState state: PrettyKeyboardState, userInfo: [AnyHashable : Any]? = nil) {
+        keyboardState = state
+        
+        guard let userInfo = userInfo else {
+            return
+        }
+        
+        if let beginFrameValue = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
+            beginFrame = beginFrameValue.cgRectValue
+        }
+        
+        if let endFrameValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+            endFrame = endFrameValue.cgRectValue
+        }
+        
+        if let durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double {
+            duration = TimeInterval(durationValue)
+        }
+        
+        if let animationCurveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? Int, let viewAnimationCurve = UIViewAnimationCurve(rawValue: animationCurveValue) {
+            animationCurve = viewAnimationCurve
+        }
+        
+        if #available(iOS 9.0, *) {
+            if let isLocalValue = userInfo[UIKeyboardIsLocalUserInfoKey] as? Bool {
+                isLocal = isLocalValue
+            }
+        }
     }
 }
 

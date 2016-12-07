@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "PrettyKeyboardHelper"
-  s.version      = "0.1.3"
+  s.version      = "0.2"
   s.summary      = "A helper for keyboard notifications."
 
   s.description  = <<-DESC
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.author              = { "Oleksii Naboichenko" => "nab0y4enko@gmail.com" }
   s.social_media_url    = "https://twitter.com/nab0y4enko"
 
-  s.platform        = :ios, "9.0"
+  s.platform        = :ios, "8.0"
 
   s.source          = { :git => "https://github.com/nab0y4enko/PrettyKeyboardHelper.git", :tag => "#{s.version}" }
 

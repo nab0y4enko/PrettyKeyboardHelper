@@ -10,7 +10,8 @@
 
 A safe helper for keyboard notifications written in Swift.
 
-<img src="https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/develop/demo.gif" alt="Demo" width="320" height="567"/>
+<img src="https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/develop/demo 1.gif" alt="Demo" width="320" height="568"/> 
+<img src="https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/develop/demo 2.gif" alt="Demo" width="320" height="568"/>
 
 ## Installation
 
@@ -71,7 +72,7 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 
 ## Requirements
 
-- **iOS 9.0** or higher
+- **iOS 8.0** or higher
 - **Xcode 8.0 (swift 3.0)** or higher
 
 

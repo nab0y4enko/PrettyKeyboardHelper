@@ -13,13 +13,15 @@
 		1B2E633F1DEDE0BB00D28731 /* NSLayoutConstraint+PrettyKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B2E633E1DEDE0BB00D28731 /* NSLayoutConstraint+PrettyKeyboardHelper.swift */; };
 		1B65141C1DEC40D400165693 /* PrettyKeyboardHelper.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B65141A1DEC40D400165693 /* PrettyKeyboardHelper.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1B6514291DEC411800165693 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6514281DEC411800165693 /* AppDelegate.swift */; };
-		1B65142B1DEC411800165693 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65142A1DEC411800165693 /* ViewController.swift */; };
 		1B65142E1DEC411800165693 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B65142C1DEC411800165693 /* Main.storyboard */; };
 		1B6514301DEC411800165693 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B65142F1DEC411800165693 /* Assets.xcassets */; };
 		1B6514331DEC411800165693 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B6514311DEC411800165693 /* LaunchScreen.storyboard */; };
 		1B6514391DEC415700165693 /* PrettyKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B6514381DEC415700165693 /* PrettyKeyboardHelper.swift */; };
 		1B65143A1DEC4DCE00165693 /* PrettyKeyboardHelper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6514171DEC40D400165693 /* PrettyKeyboardHelper.framework */; };
 		1B65143E1DEC4F5700165693 /* PrettyKeyboardHelper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1B6514171DEC40D400165693 /* PrettyKeyboardHelper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		1BBB49661DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB49651DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift */; };
+		1BF80A7F1DF733010046CF94 /* ExampleFromInsetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80A7E1DF733010046CF94 /* ExampleFromInsetsViewController.swift */; };
+		1BF80A811DF733180046CF94 /* ExampleFromConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80A801DF733180046CF94 /* ExampleFromConstraintViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,12 +58,14 @@
 		1B65141B1DEC40D400165693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6514261DEC411700165693 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B6514281DEC411800165693 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1B65142A1DEC411800165693 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1B65142D1DEC411800165693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1B65142F1DEC411800165693 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1B6514321DEC411800165693 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1B6514341DEC411800165693 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B6514381DEC415700165693 /* PrettyKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrettyKeyboardHelper.swift; sourceTree = "<group>"; };
+		1BBB49651DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PrettyKeyboardHelper.swift"; sourceTree = "<group>"; };
+		1BF80A7E1DF733010046CF94 /* ExampleFromInsetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFromInsetsViewController.swift; sourceTree = "<group>"; };
+		1BF80A801DF733180046CF94 /* ExampleFromConstraintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFromConstraintViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +115,7 @@
 				1B2E63381DEDDE2800D28731 /* PrettyKeyboardState.swift */,
 				1B2E633A1DEDDE4700D28731 /* PrettyKeyboardHelperDelegate.swift */,
 				1B2E633E1DEDE0BB00D28731 /* NSLayoutConstraint+PrettyKeyboardHelper.swift */,
+				1BBB49651DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift */,
 			);
 			path = PrettyKeyboardHelper;
 			sourceTree = "<group>";
@@ -119,7 +124,8 @@
 			isa = PBXGroup;
 			children = (
 				1B6514281DEC411800165693 /* AppDelegate.swift */,
-				1B65142A1DEC411800165693 /* ViewController.swift */,
+				1BF80A7E1DF733010046CF94 /* ExampleFromInsetsViewController.swift */,
+				1BF80A801DF733180046CF94 /* ExampleFromConstraintViewController.swift */,
 				1B65142C1DEC411800165693 /* Main.storyboard */,
 				1B65142F1DEC411800165693 /* Assets.xcassets */,
 				1B6514311DEC411800165693 /* LaunchScreen.storyboard */,
@@ -244,6 +250,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1BBB49661DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift in Sources */,
 				1B2E63391DEDDE2800D28731 /* PrettyKeyboardState.swift in Sources */,
 				1B2E633B1DEDDE4700D28731 /* PrettyKeyboardHelperDelegate.swift in Sources */,
 				1B2E63371DEDDDFF00D28731 /* PrettyKeyboardInfo.swift in Sources */,
@@ -256,7 +263,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1B65142B1DEC411800165693 /* ViewController.swift in Sources */,
+				1BF80A811DF733180046CF94 /* ExampleFromConstraintViewController.swift in Sources */,
+				1BF80A7F1DF733010046CF94 /* ExampleFromInsetsViewController.swift in Sources */,
 				1B6514291DEC411800165693 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,7 +340,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -379,7 +387,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -43,11 +43,11 @@ public final class PrettyKeyboardHelper {
     }
     
     private dynamic func keyboardWillShow(_ notification: Notification) {
-        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(userInfo: notification.userInfo, keyboardState: .keyboardWillShow))
+        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillShow, userInfo: notification.userInfo))
     }
     
     private dynamic func keyboardWillHide(_ notification: Notification) {
-        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(userInfo: notification.userInfo, keyboardState: .keyboardWillHide))
+        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillHide, userInfo: notification.userInfo))
     }
     
     private func notifyDelegateFromKeyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {

@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-extension NSLayoutConstraint {
+public extension NSLayoutConstraint {
     
     /// Animated update constant value
     ///
@@ -17,8 +17,13 @@ extension NSLayoutConstraint {
     ///   - keyboardInfo: Information from PrettyKeyboardHelper
     ///   - defaultConstant: Base constant value
     ///   - completion: Completion closure
-    public final func updateConstant(keyboardInfo: PrettyKeyboardInfo, defaultConstant: CGFloat = 0.0, completion: ((Bool) -> Swift.Void)? = nil) {
-        constant = keyboardInfo.estimatedKeyboardHeight + defaultConstant
+    public final func updateConstant(with keyboardInfo: PrettyKeyboardInfo, defaultConstant: CGFloat = 0.0, bottomLayoutGuide: UILayoutSupport? = nil, completion: ((Bool) -> Swift.Void)? = nil) {
+        
+        if let bottomLayoutGuideLength = bottomLayoutGuide?.length, keyboardInfo.keyboardState == .keyboardWillShow {
+            constant = keyboardInfo.estimatedKeyboardHeight + defaultConstant - bottomLayoutGuideLength
+        } else {
+            constant = keyboardInfo.estimatedKeyboardHeight + defaultConstant
+        }
         
         guard let view = firstItem as? UIView ?? secondItem as? UIView, let superview = view.superview else {
             if let completion = completion {
