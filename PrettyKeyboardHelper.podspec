@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/nab0y4enko/PrettyKeyboardHelper"
-  s.screenshots  = "https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/master/demo.gif"
+  s.screenshots  = "https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/master/demo%201.gif", "https://raw.githubusercontent.com/nab0y4enko/PrettyKeyboardHelper/master/demo%202.gif"
   s.license      = "MIT"
 
   s.author              = { "Oleksii Naboichenko" => "nab0y4enko@gmail.com" }
