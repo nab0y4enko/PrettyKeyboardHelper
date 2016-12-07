@@ -44,6 +44,9 @@ override func viewDidLoad() {
 ```
 
 - Implement `PrettyKeyboardHelperDelegate`
+
+> Simple example
+
 ```Swift
 extension ViewController: PrettyKeyboardHelperDelegate {
     
@@ -58,7 +61,7 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 }
 ```
 
-Or easiest way
+> Resize bottom constraint
 
 ```Swift
 extension ViewController: PrettyKeyboardHelperDelegate {
@@ -69,6 +72,39 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 }
 ```
 
+> Resize bottom constraint with UITabBar
+
+```Swift
+extension ViewController: PrettyKeyboardHelperDelegate {
+    
+    func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
+        bottomLayoutConstraint?.updateConstant(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+    }
+}
+```
+
+> Change insets for UIScrollView
+
+```Swift
+extension ViewController: PrettyKeyboardHelperDelegate {
+    
+    func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
+        tableView?.updateBottomInset(with: keyboardInfo)
+    }
+}
+```
+
+> Change insets for UIScrollView with UITabBar
+
+```Swift
+
+extension ViewController: PrettyKeyboardHelperDelegate {
+    
+    func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
+        tableView?.updateBottomInset(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+    }
+}
+```
 
 ## Requirements
 
