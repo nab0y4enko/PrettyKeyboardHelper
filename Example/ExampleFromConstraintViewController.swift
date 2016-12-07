@@ -60,9 +60,6 @@ extension ExampleFromConstraintViewController: UITableViewDelegate {
 extension ExampleFromConstraintViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        let t = bottomLayoutGuide
-        print(t)
-        print(bottomLayoutGuide.length)
-         bottomLayoutConstraint?.updateConstant(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+        bottomLayoutConstraint?.updateConstant(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
     }
 }
