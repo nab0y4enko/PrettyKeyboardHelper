@@ -4,8 +4,7 @@
 [![Swift 3 compatible](https://img.shields.io/badge/swift3-compatible-green.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper)
 [![Cocoapod](https://img.shields.io/cocoapods/v/PrettyKeyboardHelper.svg?branch=master?style=flat)](https://cocoapods.org/pods/PrettyKeyboardHelper)
 [![Build Status](https://travis-ci.org/nab0y4enko/PrettyKeyboardHelper.svg?branch=master)](https://travis-ci.org/nab0y4enko/PrettyKeyboardHelper)
-[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)]
-(https://github.com/nab0y4enko/PrettyKeyboardHelper/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper/blob/master/LICENSE)
 [![Twitter: @nab0y4enko](https://img.shields.io/badge/contact-@nab0y4enko-orange.svg?style=flat)](https://twitter.com/nab0y4enko)
 
 A safe helper for keyboard notifications written in Swift.
