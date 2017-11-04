@@ -42,11 +42,11 @@ public final class PrettyKeyboardHelper {
         notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    private dynamic func keyboardWillShow(_ notification: Notification) {
+    @objc private dynamic func keyboardWillShow(_ notification: Notification) {
         notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillShow, userInfo: notification.userInfo))
     }
     
-    private dynamic func keyboardWillHide(_ notification: Notification) {
+    @objc private dynamic func keyboardWillHide(_ notification: Notification) {
         notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillHide, userInfo: notification.userInfo))
     }
     
