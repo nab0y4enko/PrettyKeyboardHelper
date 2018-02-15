@@ -51,10 +51,6 @@ public final class PrettyKeyboardHelper {
     }
     
     private func notifyDelegateFromKeyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        guard UIApplication.shared.applicationState != .background else {
-            return
-        }
-        
         delegate?.keyboardWillChange(keyboardInfo)
     }
 }
