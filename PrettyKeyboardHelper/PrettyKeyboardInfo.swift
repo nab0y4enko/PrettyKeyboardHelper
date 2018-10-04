@@ -8,12 +8,13 @@
 
 import Foundation
 
+// MARK: - PrettyKeyboardInfo
 public struct PrettyKeyboardInfo {
     
     // MARK: - Public Properties
     public var keyboardState: PrettyKeyboardState
     public var duration: TimeInterval = 0
-    public var animationCurve: UIViewAnimationCurve = .easeInOut
+    public var animationCurve: Int = UIView.AnimationCurve.easeInOut.rawValue
     
     /// Start frame of the keyboard in screen coordinates.
     public var beginFrame: CGRect = CGRect()
@@ -23,55 +24,44 @@ public struct PrettyKeyboardInfo {
     
     /// Whether the keyboard is in the current application
     public var isLocal: Bool = true
-    
-    init(keyboardState state: PrettyKeyboardState, userInfo: [AnyHashable : Any]? = nil) {
-        keyboardState = state
+
+    // MARK: - Computed Properties
+    public var estimatedKeyboardHeight: CGFloat {
+        return keyboardState == .keyboardWillShow ? endFrame.size.height : 0.0
+    }
+
+    public var animationOptions: UIView.AnimationOptions {
+        return UIView.AnimationOptions(rawValue: UInt(animationCurve << 16))
+    }
+
+    // MARK: - Initializers
+    init(keyboardState: PrettyKeyboardState, userInfo: [AnyHashable : Any]? = nil) {
+        self.keyboardState = keyboardState
         
         guard let userInfo = userInfo else {
             return
         }
         
-        if let beginFrameValue = userInfo[UIKeyboardFrameBeginUserInfoKey] as? NSValue {
+        if let beginFrameValue = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue {
             beginFrame = beginFrameValue.cgRectValue
         }
         
-        if let endFrameValue = userInfo[UIKeyboardFrameEndUserInfoKey] as? NSValue {
+        if let endFrameValue = userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
             endFrame = endFrameValue.cgRectValue
         }
         
-        if let durationValue = userInfo[UIKeyboardAnimationDurationUserInfoKey] as? Double {
+        if let durationValue = userInfo[UIResponder.keyboardAnimationDurationUserInfoKey] as? Double {
             duration = TimeInterval(durationValue)
         }
         
-        if let animationCurveValue = userInfo[UIKeyboardAnimationCurveUserInfoKey] as? Int, let viewAnimationCurve = UIViewAnimationCurve(rawValue: animationCurveValue) {
-            animationCurve = viewAnimationCurve
+        if let animationCurveValue = userInfo[UIResponder.keyboardAnimationCurveUserInfoKey] as? NSNumber {
+            animationCurve = animationCurveValue.intValue
         }
         
         if #available(iOS 9.0, *) {
-            if let isLocalValue = userInfo[UIKeyboardIsLocalUserInfoKey] as? Bool {
+            if let isLocalValue = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? Bool {
                 isLocal = isLocalValue
             }
-        }
-    }
-}
-
-extension PrettyKeyboardInfo {
-    
-    // MARK: - Computed Properties
-    public var estimatedKeyboardHeight: CGFloat {
-        return keyboardState == .keyboardWillShow ? endFrame.size.height : 0.0
-    }
-    
-    public var animationOptions: UIViewAnimationOptions {
-        switch animationCurve {
-        case .easeInOut:
-            return UIViewAnimationOptions.curveEaseInOut
-        case .easeIn:
-            return UIViewAnimationOptions.curveEaseIn
-        case .easeOut:
-            return UIViewAnimationOptions.curveEaseOut
-        case .linear:
-            return UIViewAnimationOptions.curveLinear
         }
     }
 }

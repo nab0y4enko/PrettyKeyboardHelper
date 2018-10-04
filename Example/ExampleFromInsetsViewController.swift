@@ -9,6 +9,7 @@
 import UIKit
 import PrettyKeyboardHelper
 
+// MARK: - ExampleFromInsetsViewController
 class ExampleFromInsetsViewController: UIViewController {
     
     // MARK: - Outlets
@@ -25,7 +26,7 @@ class ExampleFromInsetsViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - ExampleFromInsetsViewController + UITableViewDataSource
 extension ExampleFromInsetsViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,7 +40,7 @@ extension ExampleFromInsetsViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - ExampleFromInsetsViewController + UITableViewDelegate
 extension ExampleFromInsetsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -49,7 +50,7 @@ extension ExampleFromInsetsViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - PrettyKeyboardHelperDelegate
+// MARK: - ExampleFromInsetsViewController + PrettyKeyboardHelperDelegate
 extension ExampleFromInsetsViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {

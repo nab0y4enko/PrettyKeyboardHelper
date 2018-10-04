@@ -9,12 +9,13 @@
 import UIKit
 import PrettyKeyboardHelper
 
+// MARK: - ExampleFromConstraintViewController
 class ExampleFromConstraintViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var bottomLayoutConstraint: NSLayoutConstraint?
+
     // MARK: - Private Properties
-    
     private var prettyKeyboardHelper: PrettyKeyboardHelper?
     
     // MARK: - UIViewController
@@ -33,7 +34,7 @@ class ExampleFromConstraintViewController: UIViewController {
     }
 }
 
-// MARK: - UITableViewDataSource
+// MARK: - ExampleFromConstraintViewController + UITableViewDataSource
 extension ExampleFromConstraintViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -47,7 +48,7 @@ extension ExampleFromConstraintViewController: UITableViewDataSource {
     }
 }
 
-// MARK: - UITableViewDelegate
+// MARK: - ExampleFromConstraintViewController + UITableViewDelegate
 extension ExampleFromConstraintViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -56,7 +57,7 @@ extension ExampleFromConstraintViewController: UITableViewDelegate {
     }
 }
 
-// MARK: - PrettyKeyboardHelperDelegate
+// MARK: - ExampleFromConstraintViewController + PrettyKeyboardHelperDelegate
 extension ExampleFromConstraintViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {

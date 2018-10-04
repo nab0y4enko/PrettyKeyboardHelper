@@ -25,15 +25,19 @@ public extension NSLayoutConstraint {
             constant = keyboardInfo.estimatedKeyboardHeight + defaultConstant
         }
         
-        guard let view = firstItem as? UIView ?? secondItem as? UIView, let superview = view.superview else {
-            if let completion = completion {
-                completion(false)
-            }
+        guard let view = (firstItem ?? secondItem) as? UIView, let superview = view.superview else {
+            completion?(false)
             return
         }
         
-        UIView.animate(withDuration: keyboardInfo.duration, delay: 0, options: keyboardInfo.animationOptions, animations: {
-            superview.layoutIfNeeded()
-        }, completion: completion)
+        UIView.animate(
+            withDuration: keyboardInfo.duration,
+            delay: 0,
+            options: keyboardInfo.animationOptions,
+            animations: {
+                superview.layoutIfNeeded()
+            },
+            completion: completion
+        )
     }
 }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public protocol PrettyKeyboardHelperDelegate: class {
+public protocol PrettyKeyboardHelperDelegate: AnyObject {
 
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo)
 }

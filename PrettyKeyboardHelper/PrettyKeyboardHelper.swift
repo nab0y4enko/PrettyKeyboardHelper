@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - PrettyKeyboardHelper
 public final class PrettyKeyboardHelper {
     
     // MARK: - Public Properties
@@ -26,20 +27,15 @@ public final class PrettyKeyboardHelper {
         delegate = nil
     }
     
-    // MARK: - Computed Properties
-    private var notificationCenter: NotificationCenter {
-        return NotificationCenter.default
-    }
-    
     // MARK: - Private Instance Methods
     private func registerObservers() {
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(_:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(_:)), name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     private func unregisterObservers() {
-        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
-        notificationCenter.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
     @objc private dynamic func keyboardWillShow(_ notification: Notification) {
