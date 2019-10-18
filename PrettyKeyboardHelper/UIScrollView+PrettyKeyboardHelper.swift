@@ -6,26 +6,16 @@
 //  Copyright © 2016 Oleksii Naboichenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 public extension UIScrollView {
-    
-    /// Animated update bottom inset value
-    ///
-    /// - Parameters:
-    ///   - keyboardInfo: Information from PrettyKeyboardHelper
-    ///   - defaultBottomInset: Base inset value
-    ///   - completion: Completion closure
 
-    public final func updateBottomInset(with keyboardInfo: PrettyKeyboardInfo, defaultBottomInset: CGFloat = 0.0, bottomLayoutGuide: UILayoutSupport? = nil, completion: ((Bool) -> Swift.Void)? = nil) {
-        
-        let bottomInset: CGFloat = {
-            if let bottomLayoutGuideLength = bottomLayoutGuide?.length, keyboardInfo.keyboardState == .keyboardWillShow {
-                return keyboardInfo.estimatedKeyboardHeight + defaultBottomInset - bottomLayoutGuideLength
-            }
-
-            return keyboardInfo.estimatedKeyboardHeight + defaultBottomInset
-        }()
+    final func updateBottomInset(with keyboardInfo: PrettyKeyboardInfo, defaultBottomInset: CGFloat = 0.0, safeAreaInsets: UIEdgeInsets? = nil, completion: ((Bool) -> Swift.Void)? = nil) {
+        var bottomContentInset = keyboardInfo.estimatedKeyboardHeight + defaultBottomInset
+            
+        if let bottomSafeAreaInset = safeAreaInsets?.bottom, keyboardInfo.keyboardState == .willBeShown {
+            bottomContentInset -= bottomSafeAreaInset
+        }
         
         UIView.animate(
             withDuration: keyboardInfo.duration,
@@ -37,11 +27,11 @@ public extension UIScrollView {
                 }
 
                 var contentInset = strongSelf.contentInset
-                contentInset.bottom = bottomInset
+                contentInset.bottom = bottomContentInset
                 strongSelf.contentInset = contentInset
 
                 var scrollIndicatorInsets = strongSelf.scrollIndicatorInsets
-                scrollIndicatorInsets.bottom = bottomInset
+                scrollIndicatorInsets.bottom = bottomContentInset
                 strongSelf.scrollIndicatorInsets = scrollIndicatorInsets
             },
             completion: completion

@@ -6,13 +6,19 @@
 //  Copyright © 2016 Oleksii Naboichenko. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - PrettyKeyboardInfo
 public struct PrettyKeyboardInfo {
     
+    // MARK: - PrettyKeyboardState
+    public enum KeyboardState {
+        case willBeShown
+        case willBeHidden
+    }
+
     // MARK: - Public Properties
-    public var keyboardState: PrettyKeyboardState
+    public var keyboardState: KeyboardState
     public var duration: TimeInterval = 0
     public var animationCurve: Int = UIView.AnimationCurve.easeInOut.rawValue
     
@@ -27,7 +33,7 @@ public struct PrettyKeyboardInfo {
 
     // MARK: - Computed Properties
     public var estimatedKeyboardHeight: CGFloat {
-        return keyboardState == .keyboardWillShow ? endFrame.size.height : 0.0
+        return keyboardState == .willBeShown ? endFrame.size.height : 0.0
     }
 
     public var animationOptions: UIView.AnimationOptions {
@@ -35,7 +41,7 @@ public struct PrettyKeyboardInfo {
     }
 
     // MARK: - Initializers
-    init(keyboardState: PrettyKeyboardState, userInfo: [AnyHashable : Any]? = nil) {
+    init(keyboardState: KeyboardState, userInfo: [AnyHashable : Any]? = nil) {
         self.keyboardState = keyboardState
         
         guard let userInfo = userInfo else {
@@ -58,10 +64,8 @@ public struct PrettyKeyboardInfo {
             animationCurve = animationCurveValue.intValue
         }
         
-        if #available(iOS 9.0, *) {
-            if let isLocalValue = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? Bool {
-                isLocal = isLocalValue
-            }
+        if let isLocalValue = userInfo[UIResponder.keyboardIsLocalUserInfoKey] as? Bool {
+            isLocal = isLocalValue
         }
     }
 }

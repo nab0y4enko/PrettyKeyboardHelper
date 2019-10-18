@@ -25,13 +25,6 @@ class ExampleFromConstraintViewController: UIViewController {
         prettyKeyboardHelper = PrettyKeyboardHelper(delegate: self)
         
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        let t = bottomLayoutGuide
-        print(t)
-    }
 }
 
 // MARK: - ExampleFromConstraintViewController + UITableViewDataSource
@@ -61,6 +54,6 @@ extension ExampleFromConstraintViewController: UITableViewDelegate {
 extension ExampleFromConstraintViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        bottomLayoutConstraint?.updateConstant(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+        bottomLayoutConstraint?.updateConstant(with: keyboardInfo, safeAreaInsets: view.safeAreaInsets)
     }
 }

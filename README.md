@@ -1,7 +1,7 @@
 # PrettyKeyboardHelper
 
 [![Platform iOS](https://img.shields.io/badge/platform-iOS-blue.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper)
-[![Swift 4.2 compatible](https://img.shields.io/badge/swift3-compatible-green.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper)
+[![Swift 5 compatible](https://img.shields.io/badge/swift3-compatible-green.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper)
 [![Cocoapod](https://img.shields.io/cocoapods/v/PrettyKeyboardHelper.svg?branch=master?style=flat)](https://cocoapods.org/pods/PrettyKeyboardHelper)
 [![Build Status](https://travis-ci.org/nab0y4enko/PrettyKeyboardHelper.svg?branch=master)](https://travis-ci.org/nab0y4enko/PrettyKeyboardHelper)
 [![License](https://img.shields.io/badge/license-MIT-green.svg?style=flat)](https://github.com/nab0y4enko/PrettyKeyboardHelper/blob/master/LICENSE)
@@ -77,7 +77,7 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 extension ViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        bottomLayoutConstraint?.updateConstant(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+        bottomLayoutConstraint?.updateConstant(with: keyboardInfo)
     }
 }
 ```
@@ -100,15 +100,15 @@ extension ViewController: PrettyKeyboardHelperDelegate {
 extension ViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        tableView?.updateBottomInset(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+        tableView?.updateBottomInset(with: keyboardInfo)
     }
 }
 ```
 
 ## Requirements
 
-- **iOS 8.0** or higher
-- **Xcode 10.0 (swift 4.2)** or higher
+- **iOS 11.0** or higher
+- **Xcode 11.0 (swift 5)** or higher
 
 
 ## License

@@ -7,16 +7,16 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - PrettyKeyboardHelper
 public final class PrettyKeyboardHelper {
     
     // MARK: - Public Properties
-    public weak var delegate: PrettyKeyboardHelperDelegate?
+    public private(set) weak var delegate: PrettyKeyboardHelperDelegate?
     
     // MARK: - Initializers
     public init(delegate: PrettyKeyboardHelperDelegate? = nil) {
-        
         self.delegate = delegate
         registerObservers()
     }
@@ -38,12 +38,12 @@ public final class PrettyKeyboardHelper {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    @objc private dynamic func keyboardWillShow(_ notification: Notification) {
-        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillShow, userInfo: notification.userInfo))
+    @objc private func keyboardWillShow(_ notification: Notification) {
+        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .willBeShown, userInfo: notification.userInfo))
     }
     
-    @objc private dynamic func keyboardWillHide(_ notification: Notification) {
-        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .keyboardWillHide, userInfo: notification.userInfo))
+    @objc private func keyboardWillHide(_ notification: Notification) {
+        notifyDelegateFromKeyboardWillChange(PrettyKeyboardInfo(keyboardState: .willBeHidden, userInfo: notification.userInfo))
     }
     
     private func notifyDelegateFromKeyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {

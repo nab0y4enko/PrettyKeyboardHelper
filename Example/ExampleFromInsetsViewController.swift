@@ -54,6 +54,6 @@ extension ExampleFromInsetsViewController: UITableViewDelegate {
 extension ExampleFromInsetsViewController: PrettyKeyboardHelperDelegate {
     
     func keyboardWillChange(_ keyboardInfo: PrettyKeyboardInfo) {
-        tableView?.updateBottomInset(with: keyboardInfo, bottomLayoutGuide: bottomLayoutGuide)
+        tableView?.updateBottomInset(with: keyboardInfo, safeAreaInsets: view.safeAreaInsets)
     }
 }
