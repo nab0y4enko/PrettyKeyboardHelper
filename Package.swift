@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "PrettyKeyboardHelper",
+    platforms: [
+		.iOS(.v13),
+	],
     products: [
         .library(
             name: "PrettyKeyboardHelper",
