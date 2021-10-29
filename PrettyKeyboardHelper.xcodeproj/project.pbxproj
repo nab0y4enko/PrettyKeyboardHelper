@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,8 @@
 		1BBB49661DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBB49651DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift */; };
 		1BF80A7F1DF733010046CF94 /* ExampleFromInsetsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80A7E1DF733010046CF94 /* ExampleFromInsetsViewController.swift */; };
 		1BF80A811DF733180046CF94 /* ExampleFromConstraintViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BF80A801DF733180046CF94 /* ExampleFromConstraintViewController.swift */; };
+		AEFF7E37272B5E3D00F6A3F3 /* PrettyUtils in Frameworks */ = {isa = PBXBuildFile; productRef = AEFF7E36272B5E3D00F6A3F3 /* PrettyUtils */; };
+		AEFF7E39272B705F00F6A3F3 /* PrettyKeyboardHelper.podspec in Resources */ = {isa = PBXBuildFile; fileRef = AEFF7E38272B705F00F6A3F3 /* PrettyKeyboardHelper.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		1BBB49651DF8091C0040D13C /* UIScrollView+PrettyKeyboardHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIScrollView+PrettyKeyboardHelper.swift"; sourceTree = "<group>"; };
 		1BF80A7E1DF733010046CF94 /* ExampleFromInsetsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFromInsetsViewController.swift; sourceTree = "<group>"; };
 		1BF80A801DF733180046CF94 /* ExampleFromConstraintViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleFromConstraintViewController.swift; sourceTree = "<group>"; };
+		AEFF7E38272B705F00F6A3F3 /* PrettyKeyboardHelper.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PrettyKeyboardHelper.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFF7E37272B5E3D00F6A3F3 /* PrettyUtils in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +92,7 @@
 		1B65140D1DEC40D300165693 = {
 			isa = PBXGroup;
 			children = (
+				AEFF7E38272B705F00F6A3F3 /* PrettyKeyboardHelper.podspec */,
 				1B6514191DEC40D400165693 /* PrettyKeyboardHelper */,
 				1B6514271DEC411700165693 /* Example */,
 				1B6514181DEC40D400165693 /* Products */,
@@ -159,6 +164,9 @@
 			dependencies = (
 			);
 			name = PrettyKeyboardHelper;
+			packageProductDependencies = (
+				AEFF7E36272B5E3D00F6A3F3 /* PrettyUtils */,
+			);
 			productName = PrettyKeyboardHelper;
 			productReference = 1B6514171DEC40D400165693 /* PrettyKeyboardHelper.framework */;
 			productType = "com.apple.product-type.framework";
@@ -189,7 +197,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0810;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1310;
 				ORGANIZATIONNAME = "Oleksii Naboichenko";
 				TargetAttributes = {
 					1B6514161DEC40D400165693 = {
@@ -213,6 +221,9 @@
 				Base,
 			);
 			mainGroup = 1B65140D1DEC40D300165693;
+			packageReferences = (
+				AEFF7E35272B5E3D00F6A3F3 /* XCRemoteSwiftPackageReference "PrettyUtils" */,
+			);
 			productRefGroup = 1B6514181DEC40D400165693 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -228,6 +239,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEFF7E39272B705F00F6A3F3 /* PrettyKeyboardHelper.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -320,6 +332,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -346,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -382,6 +395,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -402,10 +416,11 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -425,14 +440,20 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PrettyKeyboardHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nab0y4enko.PrettyKeyboardHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -448,13 +469,19 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PrettyKeyboardHelper/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nab0y4enko.PrettyKeyboardHelper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -466,7 +493,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nab0y4enko.PrettyKeyboardHelper.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -483,7 +513,10 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Example/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nab0y4enko.PrettyKeyboardHelper.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -523,6 +556,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEFF7E35272B5E3D00F6A3F3 /* XCRemoteSwiftPackageReference "PrettyUtils" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nab0y4enko/PrettyUtils";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEFF7E36272B5E3D00F6A3F3 /* PrettyUtils */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEFF7E35272B5E3D00F6A3F3 /* XCRemoteSwiftPackageReference "PrettyUtils" */;
+			productName = PrettyUtils;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1B65140E1DEC40D300165693 /* Project object */;
 }

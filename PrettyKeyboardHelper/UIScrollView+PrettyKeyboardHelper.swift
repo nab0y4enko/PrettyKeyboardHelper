@@ -22,17 +22,17 @@ public extension UIScrollView {
             delay: 0,
             options: keyboardInfo.animationOptions,
             animations: { [weak self] in
-                guard let strongSelf = self else {
+                guard let self = self else {
                     return
                 }
 
-                var contentInset = strongSelf.contentInset
+                var contentInset = self.contentInset
                 contentInset.bottom = bottomContentInset
-                strongSelf.contentInset = contentInset
+                self.contentInset = contentInset
 
-                var scrollIndicatorInsets = strongSelf.scrollIndicatorInsets
-                scrollIndicatorInsets.bottom = bottomContentInset
-                strongSelf.scrollIndicatorInsets = scrollIndicatorInsets
+                var verticalScrollIndicatorInsets = self.verticalScrollIndicatorInsets
+                verticalScrollIndicatorInsets.bottom = bottomContentInset
+                self.verticalScrollIndicatorInsets = verticalScrollIndicatorInsets
             },
             completion: completion
         )

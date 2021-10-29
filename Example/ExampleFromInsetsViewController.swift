@@ -15,14 +15,17 @@ class ExampleFromInsetsViewController: UIViewController {
     // MARK: - Outlets
     @IBOutlet weak var tableView: UITableView?
     
-    // MARK: - Private Properties    
-    private var prettyKeyboardHelper: PrettyKeyboardHelper?
-    
-    // MARK: - UIViewController
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // MARK: - Lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         
-        prettyKeyboardHelper = PrettyKeyboardHelper(delegate: self)
+        PrettyKeyboardHelper.shared.addObserver(self)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        PrettyKeyboardHelper.shared.removeObserver(self)
     }
 }
 
