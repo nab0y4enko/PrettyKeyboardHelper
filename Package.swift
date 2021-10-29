@@ -1,11 +1,5 @@
-//
-//  Package.swift
-//  PrettyKeyboardHelper
-//
-//  Created by Oleksii Naboichenko on 10/28/21.
-//  Copyright © 2021 Oleksii Naboichenko. All rights reserved.
-//
-
+// swift-tools-version:5.2
+// The swift-tools-version declares the minimum version of Swift required to build this package.
 import PackageDescription
 
 let package = Package(

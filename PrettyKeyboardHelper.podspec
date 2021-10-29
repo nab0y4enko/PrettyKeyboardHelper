@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'PrettyKeyboardHelper'
-  s.version = '2.0.0'
+  s.version = '2.0.1'
   s.summary = 'A helper for keyboard notifications.'
   s.description = 'A safe helper for keyboard notifications written in Swift.'
   s.homepage = 'https://github.com/nab0y4enko/PrettyKeyboardHelper'
