@@ -22,6 +22,9 @@ let package = Package(
     targets: [
         .target(
             name: "PrettyKeyboardHelper",
+            dependencies: [
+                "PrettyUtils"
+            ],
             path: "PrettyKeyboardHelper",
             exclude: [
                 "PrettyKeyboardHelper.h",
